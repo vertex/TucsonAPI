@@ -13,5 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+  return View::make('hello');
 });
+Route::get('/api/{collection}', array('as' => 'collection_call', 'uses' => 'ApiController@request'));
+Route::post('/api/{collection}', array('as' => 'collection_call_post', 'uses' => 'ApiController@post'));
