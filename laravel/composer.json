@@ -3,7 +3,12 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"require": {
+<<<<<<< HEAD
 		"laravel/framework": "4.0.*"
+=======
+		"laravel/framework": "4.0.*",
+		"jenssegers/mongodb": "*"
+>>>>>>> b5a03547235fca0de563130b2f865b0faaef7ea8
 	},
 	"autoload": {
 		"classmap": [

@@ -13,6 +13,13 @@
 
 Route::get('/', function()
 {
+<<<<<<< HEAD
 	return View::make('home');
 	//return View::make('hello');
 });
+=======
+  return View::make('hello');
+});
+Route::get('/api/{collection}', array('as' => 'collection_call', 'uses' => 'ApiController@request'));
+Route::post('/api/{collection}', array('as' => 'collection_call_post', 'uses' => 'ApiController@post'));
+>>>>>>> b5a03547235fca0de563130b2f865b0faaef7ea8
