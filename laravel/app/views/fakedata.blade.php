@@ -36,10 +36,6 @@
 
        map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-    $(function() {
       $('#map').hide();
       $.post(null,{},function(data, textStatus, jqXHR)
         {
@@ -50,6 +46,7 @@
             if(data[x]['lat'])
             {
               $('#map:hidden').show();
+              google.maps.event.trigger(map, "resize");
               var meter = new google.maps.LatLng(data[x]['lat'], data[x]['lon']);
               var meterMarker = new google.maps.Marker({
                   position: meter,
@@ -67,6 +64,10 @@
             $table.appendTo('#data');
           }
         },'json');
+
+    }
+    $(function() {
+    google.maps.event.addDomListener(window, 'load', initialize);
     });
   </script>
 @stop
