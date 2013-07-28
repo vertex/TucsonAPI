@@ -3,11 +3,10 @@
 @section('content')
 
   <h2>{{ studly_case($collection) }}</h2>
-  <div id="map">
-
+  <div id="map" class="col-lg-6">
     <div id="map_canvas" style="height: 300px; width: 100%;"></div>
   </div>
-  <div id="data">
+  <div id="data" stlye="padding-top:2em;">
   </div>
   <ul class="pagination">
     <li><a href="#">&laquo;</a></li>
@@ -20,26 +19,26 @@
   </ul>
   <script>
 
-      var map = null;
+    var map = null;
 
-      var currentLat = null;
+    var currentLat = null;
 
-      var currentLng = null;
+    var currentLng = null;
 
-      var treeList = [];
+    var treeList = [];
 
-      function initialize() {
-         var mapOptions = {
-            zoom: 11,
-            center: new google.maps.LatLng(32.1858, -110.8833),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-         };
+    function initialize() {
+       var mapOptions = {
+          zoom:12,
+          center: new google.maps.LatLng(32.1858, -110.8833),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+       };
 
-         map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+       map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
 
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
     $(function() {
       $('#map').hide();
       $.post(null,{},function(data, textStatus, jqXHR)
