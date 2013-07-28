@@ -48,9 +48,10 @@
 
             var currentLng = null;
 
-            var treeList = [];
+            var markerList = [];
 
             function initialize() {
+
              var mapOptions = {
                 zoom: 11,
                 center: new google.maps.LatLng(32.1858, -110.8833),
@@ -72,23 +73,45 @@
 
             google.maps.event.addDomListener(window, 'load', initialize);
 
+            function clearMarkers() {
+
+                for (var i = 0; i < markerList.length; i++) {
+                    //markerList[i].setMap(null);
+                    //console.dir(markerList[i]);
+                }
+                markerList = [];
+            }
+
             $(document).ready(function() {
                 $('#load-meters').click(function() {
-                    var url = null;
-                    var meters = [{"_id":"51f4410d02f752ee60b0a369","result":"awesome","foo":"bar","lat":"32.2418","lon":"-110.9647"}, 
-                                  {"_id":"51f441f902f7525b66192c54","tree":false,"lat":"32.2029","lon":"-110.9489"}, 
-                                  {"_id":"51f446d702f7526066e7bef1","test":"yes","lat":"32.1954","lon":"-110.8212"}];
-                    $.each(meters, function(index, value) {
-                        var meter = new google.maps.LatLng(value['lat'], value['lon']);
-                        var meterMarker = new google.maps.Marker({
-                            position: meter,
-                            map: map
-                        });
-                    });
+                    clearMarkers();
+                    var url = '/TucsonAPI/laravel/public/api/geolocation_test';
+                    //markerList = [{"_id":"51f4410d02f752ee60b0a369","result":"awesome","foo":"bar","lat":"32.2418","lon":"-110.9647"}, 
+                    //              {"_id":"51f441f902f7525b66192c54","tree":false,"lat":"32.2029","lon":"-110.9489"}, 
+                    //              {"_id":"51f446d702f7526066e7bef1","test":"yes","lat":"32.1954","lon":"-110.8212"}];
+                    //$.each(markerList, function(index, value) {
+                    //    var meter = new google.maps.LatLng(value['lat'], value['lon']);
+                    //    var meterMarker = new google.maps.Marker({
+                    //        position: meter,
+                    //        map: map
+                    //    });
+                    //    markerList.push(meterMarker);
+                    //});
 
                     if (url != null) {
-                        $.post(url, function(data) {
-                            console.log(meters);
+                        $.ajax({
+                            url: '/TucsonAPI/laravel/public/api/geolocation_test',
+                            dataType: 'json',
+                            data: {},
+                            success: function(data) {
+                                $.each(data, function(index, value){
+                                    var marker = new google.maps.LatLng(value['lat'], value['lon']);
+                                    var meterMarker = new google.maps.Marker({
+                                        position: marker,
+                                        map: map
+                                    });
+                                });
+                            }
                         });
                     }
                     return false;
