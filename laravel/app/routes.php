@@ -17,3 +17,4 @@ Route::get('/', function()
 });
 Route::get('/api/{collection}', array('as' => 'collection_call', 'uses' => 'ApiController@request'));
 Route::post('/api/{collection}', array('as' => 'collection_call_post', 'uses' => 'ApiController@post'));
+Route::get('/cron/nightly', array('as' => 'cron_nightly', 'uses' => 'CronController@nightly'));
