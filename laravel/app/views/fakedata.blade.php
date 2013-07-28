@@ -20,6 +20,26 @@
   </ul>
   <script>
 
+      var map = null;
+
+      var currentLat = null;
+
+      var currentLng = null;
+
+      var treeList = [];
+
+      function initialize() {
+         var mapOptions = {
+            zoom: 11,
+            center: new google.maps.LatLng(32.1858, -110.8833),
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+         };
+
+         map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
     $(function() {
       $('#map').hide();
       $.post(null,{},function(data, textStatus, jqXHR)
@@ -31,7 +51,11 @@
             if(data[x]['lat'])
             {
               $('#map:hidden').show();
-
+              var meter = new google.maps.LatLng(data[x]['lat'], data[x]['lon']);
+              var meterMarker = new google.maps.Marker({
+                  position: meter,
+                  map: map
+              });
             }
 
             for(key in data[x])
