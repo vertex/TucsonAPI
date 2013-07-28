@@ -5,7 +5,7 @@ class ApiController extends Controller {
   {
     if($collection == null)
       return false;
-    $documents = MDB::collection($collection)->get();
+    $documents = MDB::collection($collection)->take(30)->get();
     $array_to_return = array();
     foreach($documents as $document)
     {
