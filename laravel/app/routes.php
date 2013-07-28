@@ -15,4 +15,5 @@ Route::get('/', array('as' => '_home', 'uses' => 'HomeController@showWelcome'));
 Route::post('/login', array('as' => '_login', 'uses' => 'HomeController@showDashboard'));
 Route::get('/api/{collection}', array('as' => 'collection_call', 'uses' => 'HomeController@fakeData'));
 Route::post('/api/{collection}', array('as' => 'collection_call_post', 'uses' => 'ApiController@request'));
+Route::put('/api/{collection}', array('as' => 'collection_call_post', 'uses' => 'ApiController@post'));
 Route::get('/cron/nightly', array('as' => 'cron_nightly', 'uses' => 'CronController@nightly'));
