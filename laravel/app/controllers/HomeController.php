@@ -17,7 +17,21 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+
+		return View::make('welcome');
+	}
+	public function showDashboard()
+	{
+
+		return View::make('dashboard')
+      ->with('user','Bryon');
+	}
+	public function fakeData($collection = 'none')
+	{
+
+		return View::make('fakedata')
+      ->with('user','Bryon')
+      ->with('collection',$collection);
 	}
 
 }

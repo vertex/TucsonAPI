@@ -11,11 +11,8 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('home');
-	//return View::make('hello');
-});
-Route::get('/api/{collection}', array('as' => 'collection_call', 'uses' => 'ApiController@request'));
-Route::post('/api/{collection}', array('as' => 'collection_call_post', 'uses' => 'ApiController@post'));
+Route::get('/', array('as' => '_home', 'uses' => 'HomeController@showWelcome'));
+Route::post('/login', array('as' => '_login', 'uses' => 'HomeController@showDashboard'));
+Route::get('/api/{collection}', array('as' => 'collection_call', 'uses' => 'HomeController@fakeData'));
+Route::post('/api/{collection}', array('as' => 'collection_call_post', 'uses' => 'ApiController@request'));
 Route::get('/cron/nightly', array('as' => 'cron_nightly', 'uses' => 'CronController@nightly'));

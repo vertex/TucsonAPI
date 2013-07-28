@@ -85,7 +85,7 @@ return array(
 	'mongodb' => array(
 	    'host'     => '96.126.102.63',
 	    'port'     => 27017,
-	    'database' => 'tucson',
+	    'database' => 'tucson'
 	),
 
 	),
