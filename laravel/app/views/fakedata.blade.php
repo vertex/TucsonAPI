@@ -47,6 +47,9 @@
             {
               $('#map:hidden').show();
               google.maps.event.trigger(map, "resize");
+
+
+
               var meter = new google.maps.LatLng(data[x]['lat'], data[x]['lon']);
               var meterMarker = new google.maps.Marker({
                   position: meter,
