@@ -82,14 +82,11 @@ return array(
 			'password' => '',
 			'prefix'   => '',
 		),
-<<<<<<< HEAD
-=======
 	'mongodb' => array(
 	    'host'     => '96.126.102.63',
 	    'port'     => 27017,
 	    'database' => 'tucson',
 	),
->>>>>>> b5a03547235fca0de563130b2f865b0faaef7ea8
 
 	),
 
@@ -128,8 +125,4 @@ return array(
 		),
 
 	),
-<<<<<<< HEAD
-
-=======
->>>>>>> b5a03547235fca0de563130b2f865b0faaef7ea8
 );

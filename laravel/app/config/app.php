@@ -26,11 +26,7 @@ return array(
 	|
 	*/
 
-<<<<<<< HEAD
 	'url' => 'http://localhost',
-=======
-	'url' => 'http://localhost/personal/TucsonAPI/laravel/public/',
->>>>>>> b5a03547235fca0de563130b2f865b0faaef7ea8
 
 	/*
 	|--------------------------------------------------------------------------
@@ -69,11 +65,7 @@ return array(
 	|
 	*/
 
-<<<<<<< HEAD
 	'key' => '6BVBUSvqRbXUO2RN6HPKk60c2Nmf3JEn',
-=======
-	'key' => 'GoldnFE3Ks01GpCBUP294eHGiqoshXRq',
->>>>>>> b5a03547235fca0de563130b2f865b0faaef7ea8
 
 	/*
 	|--------------------------------------------------------------------------
@@ -121,10 +113,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-<<<<<<< HEAD
-=======
 		'Jenssegers\Mongodb\MongodbServiceProvider',
->>>>>>> b5a03547235fca0de563130b2f865b0faaef7ea8
 
 	),
 
@@ -190,10 +179,7 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-<<<<<<< HEAD
-=======
 		'MDB'            	=> 'Jenssegers\Mongodb\Facades\DB',
->>>>>>> b5a03547235fca0de563130b2f865b0faaef7ea8
 
 	),
 
