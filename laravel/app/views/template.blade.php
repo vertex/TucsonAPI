@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Tucson API - Parking Meters</title>
-    <link rel='stylesheet' href='http://twitter.github.io/bootstrap/dist/css/bootstrap.css'/>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Maps and Places API -->
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
