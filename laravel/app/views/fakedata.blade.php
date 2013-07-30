@@ -41,15 +41,12 @@
         {
           for(x in data)
           {
-            $table = $('<table id="data" class="table table-striped table-bordered">');
+            $table = $('<table id="data" class="table table-striped table-bordered table-condensed table-hover">');
 
             if(data[x]['lat'])
             {
               $('#map:hidden').show();
               google.maps.event.trigger(map, "resize");
-
-
-
               var meter = new google.maps.LatLng(data[x]['lat'], data[x]['lon']);
               var meterMarker = new google.maps.Marker({
                   position: meter,
